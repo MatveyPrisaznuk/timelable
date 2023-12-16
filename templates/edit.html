@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class='row'>
+  <link rel="shortcut icon" type="x-icon" href="/static/cube.png">
+    <div class='col-5 mx-auto'>
+      <h3>Edit</h3><hr>
+      <form method='post' action='{{url_for("edit",uid=datas.UID)}}'>
+        <div class='form-group'>
+          <label>Дата:</label>
+          <input type='text' name='data' required class='form-control' value='{{datas.DATA}}'>
+        </div>
+        <div class='form-group'>
+          <label>Кількість предметів:</label>
+          <input type='text' name='subject' required class='form-control' value='{{datas.SUBJECT}}'>
+        </div>
+        <br>
+          <div class="d-flex justify-content-end flex-row-reverse">
+            <a class="btn btn-primary d-inline-flex align-items-center" type="button" href="/">
+              Back   
+            </a>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            <button class="btn btn-outline-secondary d-inline-flex align-items-center" type="submit">
+              Submit
+            </button>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock %}

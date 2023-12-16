@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<link rel="shortcut icon" type="x-icon" href="static/cube.png">
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Розклад предметів</span>
+    </a>
+
+  </header>
+
+  <p class='text-right'><a href='{{url_for("add")}}' class='btn btn-success '>+Add</a></p>
+  <table class='table table-bordered'>
+    
+    <thead>
+        <div class="container my-5">
+            
+      <th>№</th>
+      <th>Дата</th>
+      <th>Предмети</th>
+      <th>Змінити</th>
+      <th>Видалити</th>
+        </div>
+    </thead>
+    <tbody>
+
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.DATA}}</td>
+          <td>{{row.SUBJECT}}</td>
+          <td><a href='{{url_for("edit",uid=row.UID)}}' class='btn btn-primary'>Edit</a></td>
+          <td><a href='{{url_for("delete",uid=row.UID)}}' class='btn btn-danger' >Delete</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">© 2023 timelable, by q1dox</p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+  
+    </footer>
+  </div>
+
+
+{% endblock %}
+
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+   
+  </div>
+
+  
